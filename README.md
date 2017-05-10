@@ -1,6 +1,8 @@
 Simple Website Boilerplate
 ==========================
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/satya164/simple-website-boilerplate.svg)](https://greenkeeper.io/)
+
 A simple website boilerplate with BrowserSync and Sass.
 
 ## Features

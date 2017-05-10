@@ -4,11 +4,11 @@
   "description": "A simple website boilerplate with BrowserSync and Sass",
   "dependencies": {},
   "devDependencies": {
-    "autoprefixer": "^6.2.1",
+    "autoprefixer": "^7.0.1",
     "browser-sync": "^2.10.1",
     "cssnano": "^3.4.0",
-    "node-sass": "^3.4.2",
-    "postcss-cli": "^2.3.2"
+    "node-sass": "^4.5.2",
+    "postcss-cli": "^4.0.0"
   },
   "scripts": {
     "start": "browser-sync start --server --files \"*.html, dist/styles/*\"",

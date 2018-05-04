@@ -2,19 +2,22 @@
   "name": "simple-website-boilerplate",
   "version": "1.0.0",
   "description": "A simple website boilerplate with BrowserSync and Sass",
+  "private": true,
   "dependencies": {},
   "devDependencies": {
-    "autoprefixer": "^6.2.1",
-    "browser-sync": "^2.10.1",
-    "cssnano": "^3.4.0",
-    "node-sass": "^3.4.2",
-    "postcss-cli": "^2.3.2"
+    "autoprefixer": "^8.1.0",
+    "browser-sync": "^2.23.6",
+    "concurrently": "^3.5.1",
+    "cssnano": "^3.10.0",
+    "node-sass": "^4.7.2",
+    "postcss-cli": "^5.0.0"
   },
   "scripts": {
-    "start": "browser-sync start --server --files \"*.html, dist/styles/*\"",
-    "build": "./node_modules/node-sass/bin/node-sass src/styles/ -o dist/styles/ && ./node_modules/postcss-cli/bin/postcss -r -u autoprefixer -u cssnano dist/styles/*",
-    "watch": "./node_modules/node-sass/bin/node-sass --watch src/styles/ -o dist/styles/",
-    "publish": "git branch -D gh-pages; git checkout -b gh-pages && npm run build && git add -f dist/ && git commit -m 'Publish website' && git push -fu origin gh-pages; git checkout master"
+    "start": "yarn build && concurrently \"yarn watch\" \"yarn serve\"",
+    "serve": "browser-sync start --server --files \"*.html, dist/styles/*\"",
+    "build": "node-sass src/styles/ -o dist/styles/ && postcss -r dist/styles/*",
+    "watch": "node-sass --watch src/styles/ -o dist/styles/",
+    "gh-pages": "git branch -D gh-pages; git checkout -b gh-pages && yarn build && git mv _CNAME CNAME && git add -f dist/ && git commit -m 'Publish website' && git push -fu origin gh-pages; git checkout master"
   },
   "repository": {
     "type": "git",

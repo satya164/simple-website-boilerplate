@@ -17,7 +17,7 @@
     "serve": "browser-sync start --server --files \"*.html, dist/styles/*\"",
     "build": "node-sass src/styles/ -o dist/styles/ && postcss -r dist/styles/*",
     "watch": "node-sass --watch src/styles/ -o dist/styles/",
-    "gh-pages": "git branch -D gh-pages; git checkout -b gh-pages && yarn build && git mv _CNAME CNAME && git add -f dist/ && git commit -m 'Publish website' && git push -fu origin gh-pages; git checkout master"
+    "gh-pages": "git branch -D gh-pages; git checkout -b gh-pages && yarn build && git add -f dist/ && git commit -m 'Publish website' && git push -fu origin gh-pages; git checkout master"
   },
   "repository": {
     "type": "git",

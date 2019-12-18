@@ -3,22 +3,6 @@
   "version": "1.0.0",
   "description": "A simple website boilerplate with BrowserSync and Sass",
   "private": true,
-  "dependencies": {},
-  "devDependencies": {
-    "autoprefixer": "^8.1.0",
-    "browser-sync": "^2.23.6",
-    "concurrently": "^3.5.1",
-    "cssnano": "^3.10.0",
-    "node-sass": "^4.7.2",
-    "postcss-cli": "^5.0.0"
-  },
-  "scripts": {
-    "start": "yarn build && concurrently \"yarn watch\" \"yarn serve\"",
-    "serve": "browser-sync start --server --files \"*.html, dist/styles/*\"",
-    "build": "node-sass src/styles/ -o dist/styles/ && postcss -r dist/styles/*",
-    "watch": "node-sass --watch src/styles/ -o dist/styles/",
-    "gh-pages": "git branch -D gh-pages; git checkout -b gh-pages && yarn build && git add -f dist/ && git commit -m 'Publish website' && git push -fu origin gh-pages; git checkout master"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/satya164/simple-website-boilerplate.git"
@@ -28,5 +12,21 @@
   "bugs": {
     "url": "https://github.com/satya164/simple-website-boilerplate/issues"
   },
-  "homepage": "https://github.com/satya164/simple-website-boilerplate#readme"
+  "homepage": "https://github.com/satya164/simple-website-boilerplate#readme",
+  "scripts": {
+    "start": "yarn build && concurrently \"yarn watch\" \"yarn serve\"",
+    "serve": "browser-sync start --server --files \"*.html, dist/styles/*\"",
+    "build": "node-sass src/styles/ -o dist/styles/ && postcss -r dist/styles/*",
+    "watch": "node-sass --watch src/styles/ -o dist/styles/",
+    "gh-pages": "git branch -D gh-pages; git checkout -b gh-pages && yarn build && git add -f dist/ && git commit -m 'Publish website' && git push -fu origin gh-pages; git checkout master"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "autoprefixer": "^9.7.3",
+    "browser-sync": "^2.26.7",
+    "concurrently": "^5.0.2",
+    "cssnano": "^4.1.10",
+    "node-sass": "^4.13.0",
+    "postcss-cli": "^6.1.3"
+  }
 }

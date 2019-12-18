@@ -23,9 +23,9 @@ jobs:
 
     - name: Publish
       env:
-        GITHUB_TOKEN: ${{ secrets.DEPLOY_GITHUB_TOKEN }}
-        GITHUB_EMAIL: ${{ secrets.DEPLOY_GITHUB_EMAIL }}
-        GITHUB_USER: ${{ secrets.DEPLOY_GITHUB_USER }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_EMAIL: bot@github.com
+        GITHUB_USER: Github Actions
       run: |
         git config --global user.email "$GITHUB_EMAIL"
         git config --global user.name "$GITHUB_USER"
